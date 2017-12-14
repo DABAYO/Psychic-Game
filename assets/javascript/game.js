@@ -3,10 +3,13 @@
     var wins = 0;
     var losses = 0;
     var guessesLeft = 0;
+    var guesses =[];
     
     document.onkeyup = function(event) {
 
       var userGuess = event.key;
+      guesses.push(userGuess)
+    
 
       var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
@@ -25,7 +28,7 @@
           "<p><h3>Wins: " + wins + "</h3></p>" 
           + "<p><h3>Losses: " + losses + "</h3></p>" 
           // + "<p><h3>Guesses left: " + guessesLeft +
-          + "<p><h3>Your guesses so far: " + userGuess
+          + "<p><h3>Your guesses so far: " + guesses
 
       document.querySelector("#rules").innerHTML = html;
       
